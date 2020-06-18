@@ -19,9 +19,12 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  // Your code here
+  let sumOdds = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 1) sumOdds = numbers[i] + sumOdds;
+  }
+  return sumOdds;
 }
-
 /**
  * characterCount(string, c):
  * - receives a string and a character
@@ -34,9 +37,22 @@ function sumOdds(numbers) {
  *
  * Hint: Use string methods to make it case-insensitive
  */
+
 function characterCount(string, c) {
-  // Your code here
+  string = string.toLowerCase();
+  let i = 0;
+  let charactercount = 0;
+  while (i < string.length) {
+    if (string[i] === c) {
+      charactercount++;
+    }
+
+    i++;
+    // i for the charcter itself oo charactercount 7ag string
+  }
+  return charactercount;
 }
+console.log(characterCount("Character Count is clever", "c"));
 
 /**
  * differences(numbers):
@@ -54,8 +70,16 @@ function characterCount(string, c) {
  * differences([11, 35, 52, 14, 56]) -> [24,  17, -38,  42]
  */
 function differences(numbers) {
-  // Your code here
+  let newNumbers = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (i + 1 > numbers.length) {
+      break;
+    }
+    newNumbers.push(numbers[i + 1] - numbers[i]);
+  }
+  return newNumbers;
 }
+console.log(differences([11, 35, 52, 14, 56]));
 
 /**
  * largestIncrement(numbers):
@@ -74,7 +98,10 @@ function differences(numbers) {
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
-  // Your code here
+  // Your code here let numbersnew = []
+  //let  numbers = []
+  //while (i> numbers.length)
+  //
 }
 
 /**
@@ -89,7 +116,7 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // Your code here
+  // You let numbers =[] let i = 0
 }
 
 /**
