@@ -39,20 +39,13 @@ function sumOdds(numbers) {
  */
 
 function characterCount(string, c) {
-  string = string.toLowerCase();
-  let i = 0;
-  let charactercount = 0;
-  while (i < string.length) {
-    if (string[i] === c) {
-      charactercount++;
-    }
-
-    i++;
-    // i for the charcter itself oo charactercount 7ag string
+  let count = 0;
+  for (i = 0; i < string.length; i++) {
+    if (c.isUpperCase() === string[i].isUpperCase()) count++;
   }
-  return charactercount;
+  // i for the charcter itself oo charactercount 7ag string
+  return count;
 }
-console.log(characterCount("Character Count is clever", "c"));
 
 /**
  * differences(numbers):
@@ -70,18 +63,16 @@ console.log(characterCount("Character Count is clever", "c"));
  * differences([11, 35, 52, 14, 56]) -> [24,  17, -38,  42]
  */
 function differences(numbers) {
-  let newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (i + 1 > numbers.length) {
-      break;
-    }
-    newNumbers.push(numbers[i + 1] - numbers[i]);
+  const newArray = [];
+  for (i = 0; i < numbers.length - 1; i++) {
+    // length-1 3ashan yo9al le akhr wa7ed oo yogaf, -1 is an index shaikha!
+    newArray.push(numbers[i + 1] - numbers[i]);
   }
-  return newNumbers;
+  return newArray;
 }
-console.log(differences([11, 35, 52, 14, 56]));
 
 /**
+ 
  * largestIncrement(numbers):
  * - receives an array of numbers
  * - returns the largest difference between two consecutive numbers in the array
@@ -98,12 +89,10 @@ console.log(differences([11, 35, 52, 14, 56]));
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
-  // Your code here let numbersnew = []
-  //let  numbers = []
-  //while (i> numbers.length)
-  //
+  const bigDiff = differences(numbers);
+  return Math.max(...bigDiff);
 }
-
+// math.max literlly e6l3 le the biggest differ oo aktb wraha esm the variable
 /**
  * afterX(numbers, x):
  * - receives an array of numbers, and a number `x`.
@@ -116,7 +105,12 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // You let numbers =[] let i = 0
+  let numafterx = [];
+  for ( i=0; i<numbers.length, i++ ) {
+    if (numbers[i]=== x) numafterx= numbers.slice(i+1, numbers.length);
+  }
+return numafterx;
+
 }
 
 /**
@@ -131,7 +125,10 @@ function afterX(numbers, x) {
  * Hint: Use string method .toUpperCase()
  */
 function abbreviate(firstName, lastName) {
-  // Your code here
+  let initials = "";
+  initials = firstName[0].toUpperCase();
+  initials += lastName[0].toUpperCase();
+return initials;
 }
 
 /**
@@ -145,7 +142,8 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  // Your code here
+  if (string===string.toUpperCase()) return true;
+  else return false;
 }
 
 /**
@@ -159,7 +157,10 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
-  // Your code here
+  for(i=0;i<numbers.length;i++){
+    if (numbers[i]===x) return true;
+  }
+  return false;
 }
 
 /**
@@ -173,7 +174,12 @@ function elementInArray(numbers, x) {
  *
  */
 function reverseString(string) {
-  // Your code here
+  let revString = [];
+  //for (i=0;i<string.length;i++) hathy the real one
+  for(i = string.length- 1; i>=0; i-- ){//the reversed one
+    revString += string[i];
+  }
+  return revString
 }
 
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
